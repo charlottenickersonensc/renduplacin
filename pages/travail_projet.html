@@ -1,4 +1,4 @@
-<!--- Bivenue au mon site web, M. Placin !
+<!--- 🚲🚲🚲 Bienvenue au mon site web, M. Placin ! 🚲🚲🚲
 Vous pouvez trouver les consignes en recherchant « PLACIN » dans les fichiers.
 Il y a des commentaires « PLACIN » dans travail_projet.html, contact.html, et styles-main.css.
 J'espère que vous apprécierez ce site. Bonnes vacances ! -->
@@ -50,7 +50,7 @@ J'espère que vous apprécierez ce site. Bonnes vacances ! -->
 
 <nav class="navbar">
     <!-- PLACIN : une entête -->
-    <a href="#" class="logo">🚲</a>
+    <a href="#" class="logo" id="big-bicycle">🚲</a>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
         <ul>
@@ -61,6 +61,10 @@ J'espère que vous apprécierez ce site. Bonnes vacances ! -->
         </ul>
     </div>
 </nav>
+
+<!-- Fun Little Bike Bell Sound -->
+<audio id="bikeding" src="../files/bikeding.mp3"></audio>
+<script src="../scripts/bikebell.js"></script>
 
 <!-- Dashboard Content -->
 <div class="dashboard">
@@ -106,8 +110,8 @@ J'espère que vous apprécierez ce site. Bonnes vacances ! -->
 <div class="dashboard-extended">
     <div class="safety-section">
         <div class="card safety-info-card">
-            <h2 id="safety">Safety Information</h2>
-            <p class="safety-intro">Understanding bicycle safety is crucial for all riders. Below you'll find important information about accident rates, safety measures, and age-related statistics.</p>
+            <h2 id="safety">Stay Safe</h2>
+            <p class="safety-intro">Accident stats got you down? Here's some answers to some frequently asked questions about bike safety.</p>
             
             <div class="custom-accordion">
                 <div class="accordion-item">
@@ -170,7 +174,7 @@ J'espère que vous apprécierez ce site. Bonnes vacances ! -->
                         <!-- PLACIN : Sur les 3 photos minimum, une doit être une photo provenant d’un lien externe, une doit
                         être locale. -->
                     <p>As you can see in the table, there are numerous factors that can lead to bike accidents. Generally, highways and crowded streets are more dangerous for cyclists than quiet country roads or separated bike paths.</p>
-                    <p>Unfortunately, cities still have a long way to go in the way of preventing bike accidents. Some recent docucmentaries and other journalistic works, such as <a href="https://www.youtube.com/watch?v=2WL1I96a7sk">Lé vélo n'est pas un sport de glisse,</a> are raising awareness around how cities can improve safety for all cyclists.</p>
+                    <p>Unfortunately, cities still have a long way to go. Some recent documentaries and other journalistic works, such as <a href="https://www.youtube.com/watch?v=2WL1I96a7sk">Lé vélo n'est pas un sport de glisse,</a> are raising awareness around how cities can improve safety for all cyclists.</p>
                         <img src="../image/bikehelmet.jpg" alt="Woman wearing bike helmet">
                     </div>
 </div>
@@ -213,33 +217,8 @@ J'espère que vous apprécierez ce site. Bonnes vacances ! -->
 </div>
 </div>
 
-<script>
-document.querySelectorAll('.accordion-trigger').forEach(button => {
-button.addEventListener('click', () => {
-    const accordionItem = button.parentElement;
-    const isOpen = accordionItem.classList.contains('active');
-    
-    // Close all accordion items
-    document.querySelectorAll('.accordion-item').forEach(item => {
-        item.classList.remove('active');
-        item.querySelector('.accordion-icon').textContent = '+';
-    });
-
-    // Open clicked item if it wasn't already open
-    if (!isOpen) {
-        accordionItem.classList.add('active');
-        button.querySelector('.accordion-icon').textContent = '−';
-    }
-});
-});
-</script>
-
-<script>
-function toggleMenu() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-}
-</script>
+<!-- Animations for navbar -->
+<script src="../scripts/accordians.js"></script>
 
 <footer class="footer">
     <!-- PLACIN : une entête -->

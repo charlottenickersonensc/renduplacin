@@ -2,7 +2,7 @@
     --primary-color: #00B4DB;
     --secondary-color: #0083B0;
     --accent-color: #3494E6;
-    --background-gradient: linear-gradient(45deg, #0083B0, #769FB6, #00B4DB);
+    --background-gradient: linear-gradient(45deg, #004770, #769FB6, #00B4DB);
     --card-background: rgba(255, 255, 255, 0.95);
     --text-color: #2C3E50;
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -11,7 +11,7 @@
     --transition-speed: 0.3s;
 }
 
-/* Enhanced Background Animation */
+/* Background Animation */
 @keyframes gradientFlow {
     0% { background-position: 0% 50% }
     50% { background-position: 100% 50% }
@@ -42,7 +42,7 @@ body {
     color: var(--text-color);
 }
 
-/* Enhanced Navbar */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -122,7 +122,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Cards */
+/* Cards in general */
 
 .card {
     background: var(--card-background);
@@ -227,7 +227,7 @@ body {
     font-weight: 500;
 }
 
-/* Enhanced Map Section */
+/* Map Section */
 
 .map-card {
     grid-column: span 2;
@@ -292,6 +292,7 @@ body {
     animation: heartbeat 1.5s ease infinite;
 }
 
+/* Cute heartbeat animation on footer */
 @keyframes heartbeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.15); }
@@ -333,7 +334,7 @@ body {
     color: var(--text-color);
 }
 
-/* Custom Accordion Styles */
+/* Accordion Styles */
 .custom-accordion {
     display: flex;
     flex-direction: column;
@@ -548,6 +549,8 @@ body {
     animation: slideDown 0.5s ease-out;
 }
 
+/* Responsiveness for form because it was more annoying */
+
 @media (min-width: 768px) {
     .contact-form-card {
         width: 90%;
@@ -566,38 +569,12 @@ body {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .safety-info-card {
-        padding: 1.5rem;
-    }
 
-    .accordion-trigger {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-
-    .table-container {
-        margin: 1rem 0;
-    }
-
-    .safety-table th,
-    .safety-table td {
-        padding: 0.75rem;
-    }
-}
 
 /* Various media queries to make site responsive on mobile */
-/* PLACIN : La page doit comporter un responsive design de type bootstrap (ou autre) */
-@media (max-width: 768px) {
-    .footer {
-        padding: 15px;
-    }
-    
-    .footer p {
-        font-size: 0.9em;
-    }
-}
+/* PLACIN : La page doit comporter un responsive design de type bootstrap (ou autre) 
+Veuillez noter que j'utilise également css grid et flexbox pour rendre le design responsive. */
+
 
 /* Fullscreen */
 @media (max-width: 1200px) {
@@ -614,6 +591,8 @@ body {
         grid-column: span 2;
     }
 }
+
+/* Mobile */
 
 @media (max-width: 768px) {
     .navbar {
@@ -661,5 +640,31 @@ body {
     .map-card {
         grid-column: span 1;
         min-height: 300px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+    
+    .footer p {
+        font-size: 0.9em;
+    }
+
+    .safety-info-card {
+        padding: 1.5rem;
+    }
+
+    .accordion-trigger {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .table-container {
+        margin: 1rem 0;
+    }
+
+    .safety-table th,
+    .safety-table td {
+        padding: 0.75rem;
     }
 }

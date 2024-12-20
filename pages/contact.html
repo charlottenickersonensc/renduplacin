@@ -20,7 +20,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="travail_projet.html" class="logo">🚲</a>
+        <a href="travail_projet.html" class="logo" id="big-bicycle">🚲</a>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="nav-links">
             <ul>
@@ -31,6 +31,10 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Fun Little Bike Bell Sound -->
+    <audio id="bikeding" src="../files/bikeding.mp3"></audio>
+    <script src="../scripts/bikebell.js"></script>
 
     <div class="dashboard">
         <div class="hero-card">
@@ -68,17 +72,15 @@
         </div>
     </div>
 
+    <!-- Animations for navbar -->
+    <script src="../scripts/accordians.js"></script>
+
     <footer class="footer">
         <div class="footer-content">
             <p>Made with <span class="heart">♥</span> in Bordeaux by <a href="../files/cvnickerson.pdf" style="text-decoration: none; color: var(--text-color);">Charlotte Nickerson</a></p>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
-        }
-    </script>
+
 </body>
 </html>
