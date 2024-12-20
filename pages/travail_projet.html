@@ -1,0 +1,254 @@
+<!--- Bivenue au mon site web, M. Placin !
+Vous pouvez trouver les consignes en recherchant « PLACIN » dans les fichiers.
+Il y a des commentaires « PLACIN » dans travail_projet.html, contact.html, et styles-main.css.
+J'espère que vous apprécierez ce site. Bonnes vacances ! -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PLACIN : quelques balises meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Navbar animation -->
+    <script src="../scripts/navbar.js"></script>
+
+    <!-- Including various libraries to have a map -->
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+  
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Google Fonts API for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+
+    <!-- Styles -->
+    <!-- PLACIN : un fichier css rangé dans un répertoire /style / une instruction de style dans le head de la page-->
+    <link href="../style/styles-main.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <!-- PLACIN : la page doit comporter un favicône -->
+    <link rel="icon" type="image/x-icon" href="../image/whitebike.png">
+
+
+
+    <!-- PLACIN : la page a un titre dans l’entête en relation avec son thème -->
+    <title>Statistics Dashboard</title>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- PLACIN : une entête -->
+    <a href="#" class="logo">🚲</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+        <ul>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="travail_projet.html#safety">Safety</a></li>
+            <li><a href="https://www.onisr.securite-routiere.gouv.fr/outils-statistiques/recueil-de-donnees-annuelles">Source</a></li> <!-- PLACIN : Lien vers une site externe -->
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Dashboard Content -->
+<div class="dashboard">
+    <!-- Hero Card -->
+    <div class="hero-card"> <!-- PLACIN : lien de type class -->
+        <div class="hero-content">
+            <h1>Bike Accident Dashboard</h1>
+            <div class="header-box">
+                <p>2023</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Card -->
+    <div class="card map-card" style="font-size: 1em;">
+        <div id="map"> <!-- PLACIN : un lien de type ID -->
+            <script src="../scripts/bikemapfrance.js"></script>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="card stat-card">
+        <div class="stat-number">3000</div>
+        <div class="stat-label">Recorded Incidents in 2023</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-number">825</div>
+        <div class="stat-label">Injuries Leading to Hospitalization</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-number">45</div>
+        <div class="stat-label">Fatalities</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-number">1.5%</div>
+        <div class="stat-label">Fatality Rate</div>
+    </div>
+ </div>
+
+<div class="dashboard-extended">
+    <div class="safety-section">
+        <div class="card safety-info-card">
+            <h2 id="safety">Safety Information</h2>
+            <p class="safety-intro">Understanding bicycle safety is crucial for all riders. Below you'll find important information about accident rates, safety measures, and age-related statistics.</p>
+            
+            <div class="custom-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        How Common are Bike Accidents?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>There's no definite data on the number of bike accidents — less serious accidents are often unreported. Nonetheless, let's examine fatality rates among cyclists in accidents: it's less than you might think.</p>
+                        <div class="table-container"> <!-- PLACIN : un tableau d’au moins deux lignes et deux colonnes, et au moins
+                            l’utilisation d’un rowspan ou un colspan -->
+                            <h3>Bike Accident Fatality Rates, By Age and Region</h3>
+                            <table class="safety-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Age Group</th>
+                                        <th colspan="3">Urban Areas</th>
+                                        <th colspan="2">Rural Areas</th>
+                                    </tr>
+                                    <tr>
+                                        <th>City Center</th>
+                                        <th>Suburbs</th>
+                                        <th>Industrial Zones</th>
+                                        <th>Country Roads</th>
+                                        <th>Highways</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0-14</td>
+                                        <td>0.3%</td>
+                                        <td>0.5%</td>
+                                        <td>0.2%</td>
+                                        <td rowspan="2">1.2%</td>
+                                        <td>0.1%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15-29</td>
+                                        <td>0.8%</td>
+                                        <td>0.7%</td>
+                                        <td>0.6%</td>
+                                        <td>0.4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30-44</td>
+                                        <td colspan="2">1.1%</td>
+                                        <td>0.9%</td>
+                                        <td>1.5%</td>
+                                        <td>0.6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>45+</td>
+                                        <td colspan="3">1.3%</td>
+                                        <td colspan="2">1.8%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- PLACIN : La page contient 3 photos (attention à la taille des photos : maximum 640*480 pixels) -->
+                        <!-- PLACIN : Sur les 3 photos minimum, une doit être une photo provenant d’un lien externe, une doit
+                        être locale. -->
+                    <p>As you can see in the table, there are numerous factors that can lead to bike accidents. Generally, highways and crowded streets are more dangerous for cyclists than quiet country roads or separated bike paths.</p>
+                    <p>Unfortunately, cities still have a long way to go in the way of preventing bike accidents. Some recent docucmentaries and other journalistic works, such as <a href="https://www.youtube.com/watch?v=2WL1I96a7sk">Lé vélo n'est pas un sport de glisse,</a> are raising awareness around how cities can improve safety for all cyclists.</p>
+                        <img src="../image/bikehelmet.jpg" alt="Woman wearing bike helmet">
+                    </div>
+</div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger">
+                    How Do I Know if My Bike is Safe?
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Riding safe means maintaining your bike regularly. We recommend tuning up your bike at least every six months. Any bike shop will do this readily. There are also organizations that will teach you important skills like replacing inner tubes in most cities. </p>
+                    <p>But beyond these biyearly checkups, it's best to check-in on your bike's health on a regular basis to minimize the risk of accidents. Before you go on any bike ride, we recommend that you test:</p>
+                    <ul class="safety-list">
+                        <li>Your breaks</li>
+                        <li>Whether your tires are properly inflated and keep pressure (around 3.5-4 PSI for most city bikes) </li>
+                        <li>Your lights and reflectors</li>
+                        <li>Your chain and gear systems</li>
+                    </ul>
+                    <p>And remember — especially in urban areas, wearing a helmet and visible clothing are essential! Ensure that your helmet is properly adjusted before going out. </p>
+                    <img src="../image/bikerepair.jpg" alt="Woman repairing bike">
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger">
+                    Are Some Age Groups More Susceptible to Bike Accidents Than Others?
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, some age groups are more susceptible to bike accidents. Injuries and fatalities are most frequent among young adults (ages 18-29), and are especially prevelent among riders under 24 years of age. </p>
+                    <p>There are several factors that lead to these demographic differences. Young people are more likely to use bikes as a primary mode of transit, and may be less willing or have fewer financial resources to maintain them. They might also be more likely to engage in risky activities, such as biking against the direction of traffic or failing to yield when required. </p>
+                    <!-- PLACIN : Sur les 3 photos minimum, une doit être une photo provenant d’un lien externe, une doit
+                    être locale. -->
+                    <img src="https://img.freepik.com/free-photo/young-adult-using-bike-travel-city_23-2149258641.jpg" alt="Young woman riding bike">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+document.querySelectorAll('.accordion-trigger').forEach(button => {
+button.addEventListener('click', () => {
+    const accordionItem = button.parentElement;
+    const isOpen = accordionItem.classList.contains('active');
+    
+    // Close all accordion items
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.accordion-icon').textContent = '+';
+    });
+
+    // Open clicked item if it wasn't already open
+    if (!isOpen) {
+        accordionItem.classList.add('active');
+        button.querySelector('.accordion-icon').textContent = '−';
+    }
+});
+});
+</script>
+
+<script>
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
+}
+</script>
+
+<footer class="footer">
+    <!-- PLACIN : une entête -->
+    <div class="footer-content">
+        <!-- PLACIN : CSS instruction locale -->
+        <!-- PLACIN : lien vers CV -->
+        <p>Made with <span class="heart">♥</span> in Bordeaux by <a href="../files/cvnickerson.pdf" style="text-decoration: none; color: var(--text-color);">Charlotte Nickerson</a> </p>
+    </div>
+</footer>
+
+</body>
+</html>

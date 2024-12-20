@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PLACIN : La page contient un questionnaire avec une requête GET renvoyant sur une autre page du
+    site et effectuant une action à partir de la requête GET via un script javascript. Cette page de
+    réponse au questionnaire doit comporter un retour vers la page travail_projet.html. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/styles-main.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../image/whitebike.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Navbar animation -->
+    <script src="../scripts/navbar.js"></script>
+    <!-- Form stuff  -->
+    <script src="../scripts/form.js"></script>
+
+    <title>Contact Us</title>
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="travail_projet.html" class="logo">🚲</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="travail_projet.html">Statistics</a></li>
+                <li><a href="travail_projet.html#safety">Safety</a></li>
+                <li><a href="https://www.onisr.securite-routiere.gouv.fr/outils-statistiques/recueil-de-donnees-annuelles">Source</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <div class="hero-card">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+            </div>
+        </div>
+
+        <div class="card contact-form-card">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="safety">Safety Concerns</option>
+                        <option value="data">Data Questions</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div id="formResponse" class="form-response"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with <span class="heart">♥</span> in Bordeaux by <a href="../files/cvnickerson.pdf" style="text-decoration: none; color: var(--text-color);">Charlotte Nickerson</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
